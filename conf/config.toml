@@ -1,0 +1,8 @@
+IsDev = true
+Port = "8080"
+
+[MySQL]
+addr = "127.0.0.1:3306"
+user = "root"
+password = "fenghaojiang97"
+dbName = "douban"
