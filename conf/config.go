@@ -13,14 +13,15 @@ type Config struct {
 type MySQLConfig struct {
 	Addr     string `toml:"addr"`
 	User     string `toml:"user"`
+	Network  string `toml:"network"`
 	Password string `toml:"password"`
 	DBName   string `toml:"dbName"`
 }
 
-var GlobalConfig = new(Config)
+var GlobalConfig Config
 
 func Parse() error {
-	if _, err := toml.DecodeFile("./config.toml", &GlobalConfig); err != nil {
+	if _, err := toml.DecodeFile("./conf/config.toml", &GlobalConfig); err != nil {
 		return err
 	}
 	return nil
